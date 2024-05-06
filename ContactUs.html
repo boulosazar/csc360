@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0f7fa; /* Light teal */
+            color: #333;
+            text-align: center;
+			cursor:  default;
+        }
+
+        /* Container for the contact form */
+        .contact-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #009688; /* Theme color */
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Submit button styling */
+        .btn-submit {
+            background-color: #009688;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Submit button hover effect */
+        .btn-submit:hover {
+            background-color: #00796b;
+        }
+
+        /* Back to Main Page button styling */
+        .back-button {
+            display: inline-block;
+            background-color: #009688;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px; /* Rounded shape */
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        /* Back button hover effect */
+        .back-button:hover {
+            background-color: #00796b;
+            transform: scale(1.05); /* Slight enlargement on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+		
+		.thank-you-message {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            font-size: 20px;
+            color: #00796b;
+        }
+    </style>
+	
+	<script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const thankYouMessage = document.getElementById("thank-you-message");
+            thankYouMessage.style.display = "block"; // Show the thank-you message
+        }
+    </script>
+	<!--<script>
+		function thankyou(){
+			alert("Thank you for contacting us!")
+		}
+	</script>-->
+</head>
+<body>
+
+	<!-- Styled back to main page button -->
+	<div>
+	<a href="MainPageProject2.html" class="back-button">&lt; Back to Main Page</a>
+    </div>
+	
+	<!-- Contact form container -->
+	<div class="contact-container">
+        <h2>Contact Us</h2>
+        <form onsubmit="handleSubmit(event)">
+            <div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="number">Phone Number:</label>
+                <input type="tel" id="number" name="number" required>
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit"> Send</button>
+        </form>
+		
+		<!-- Thank you message section-->
+        <div id="thank-you-message" class="thank-you-message">
+			THANK YOU FOR CONTACTING US!
+        </div>
+		
+    </div>
+</body>
+</html>
